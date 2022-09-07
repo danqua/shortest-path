@@ -23,12 +23,6 @@ static void InitTileMap(tile_map* TileMap, s32 Cols, s32 Rows)
     ClearTileMap(TileMap);
 }
 
-static void InitGraph(graph* Graph, s32 NumNodes)
-{
-    Graph->Nodes = (node*)malloc(sizeof(node) * NumNodes);
-    Graph->Edges = (edge*)malloc(sizeof(edge) * NumNodes * 4);
-}
-
 static s32 TileDataFromUserState(s32 State)
 {
     s32 Result = TILE_TYPE_NONE;

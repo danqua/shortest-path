@@ -1,4 +1,5 @@
 #include "dijkstra_graph.h"
+#include <stdlib.h>
 #include <limits.h>
 
 static void ResetNodes(graph* Graph)
@@ -57,6 +58,12 @@ s32 FindNodeWithLowestCost(const node* Nodes, const node_buffer* Buffer)
         }
     }
     return Result;
+}
+
+void InitGraph(graph* Graph, s32 NumNodes)
+{
+    Graph->Nodes = (node*)malloc(sizeof(node) * NumNodes);
+    Graph->Edges = (edge*)malloc(sizeof(edge) * NumNodes * 4);
 }
 
 void RebuildGraph(graph* Graph, s32* Grid, s32 Cols, s32 Rows, s32 Ignore)

@@ -37,5 +37,7 @@ struct graph
 void NodeBufferAdd(node_buffer* Buffer, s32 Element);
 void NodeBufferRemove(node_buffer* Buffer, s32 Element);
 s32 FindNodeWithLowestCost(const node* Nodes, const node_buffer* Buffer);
+
+void InitGraph(graph* Graph, s32 NumNodes);
 void RebuildGraph(graph* Graph, s32* Grid, s32 Cols, s32 Rows, s32 Ignore);
 bool FindShortestPath(graph* Graph, s32 Start, s32 End);
